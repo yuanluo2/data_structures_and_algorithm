@@ -55,7 +55,7 @@ public:
         HashNode* node;
 
         for (size_t i = 0; i < DEFAULT_BUCKET_SIZE; ++i) {
-            if (bucket[i] != nullptr) {
+            while (bucket[i] != nullptr) {
                 node = bucket[i]->next;
                 delete bucket[i];
                 bucket[i] = node;
